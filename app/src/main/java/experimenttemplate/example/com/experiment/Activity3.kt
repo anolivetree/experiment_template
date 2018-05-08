@@ -1,10 +1,12 @@
 package experimenttemplate.example.com.experiment
 
 import android.content.Intent
+import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : LifecycleAwareActivity() {
+class Activity3 : LifecycleAwareActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,20 +25,6 @@ class MainActivity : LifecycleAwareActivity() {
         findViewById<Button>(R.id.addFragment1Button).setOnClickListener {
             val f = Fragment1()
             supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, f).addToBackStack(null).commit()
-        }
-    }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    external fun stringFromJNI(): String
-
-    companion object {
-
-        // Used to load the 'native-lib' library on application startup.
-        init {
-            System.loadLibrary("native-lib")
         }
     }
 
